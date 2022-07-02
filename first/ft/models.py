@@ -1,6 +1,7 @@
 from django.db import models
+from django.core.validators import FileExtensionValidator
 
-# Create your models here.
-class UploadFileModel(models.Model):
-    title = models.CharField(max_length=50)
-    file = models.FileField()
+class Post(models.Model):
+    xls = models.FileField(null=True,
+                           blank=True,
+                           validators=[FileExtensionValidator( ['xls'] ) ])

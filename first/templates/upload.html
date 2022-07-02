@@ -5,10 +5,13 @@
     <title>Title</title>
 </head>
 <body>
-<form action = "" method = "post">
-    {% csrf_token %}
-    {{form.as_p }}
-    <input type="submit" value=Submit">
-</form>
+<div id="page" class="container">
+    <div class="header prepend-2 span-20 append-2 last whiteboard">
+
+        {% for form in list %}
+        {{form}}
+        {% endfor %}
+  </div>
+</div>
 </body>
 </html>
